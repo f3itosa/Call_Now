@@ -11,50 +11,50 @@ import CallNow from '../src/Models/CallNow'
 
 export default class Lista extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            solicitante: "",
-            telefone: "",
-            categoria: "",
-            objeto: "",
-            descricao: "",
-            status: "",
-            lista: []
-            
+  constructor(props) {
+    super(props)
+    this.state = {
+      solicitante: "",
+      telefone: "",
+      categoria: "",
+      objeto: "",
+      descricao: "",
+      status: "",
+      lista: []
 
-        }
 
-        this.Listar()
     }
 
-
-   /*trocaSituacao = () => {
-        if (this.state.situacao === 0){
-          this.setState({status: "Em andamento"})
-          this.setState({situacao: 1})
-        }else if (this.state.situacao === 1){
-          this.setState({ status: "Resolvido"})
-          this.setState({situacao: 2 })
-        }
-        this.Atualizar
- }
-
- trocaSituacao= (item) => {
-    const banco = new CallNowDatabase();
-    banco.trocaSituacao(item)
     this.Listar()
-    this.Atualizar(item)
-    
-  }*/
+  }
 
-Atualizar = (item) => {
+
+  /*trocaSituacao = () => {
+       if (this.state.situacao === 0){
+         this.setState({status: "Em andamento"})
+         this.setState({situacao: 1})
+       }else if (this.state.situacao === 1){
+         this.setState({ status: "Resolvido"})
+         this.setState({situacao: 2 })
+       }
+       this.Atualizar
+}
+
+trocaSituacao= (item) => {
+   const banco = new CallNowDatabase();
+   banco.trocaSituacao(item)
+   this.Listar()
+   this.Atualizar(item)
+   
+ }*/
+
+  Atualizar = (item) => {
     const banco = new CallNowDatabase();
     banco.Atualizar(item)
     this.Listar()
   }
- 
-    // TIPO O CONTROLLER, MAS SEM O MVC oficial
+
+  // TIPO O CONTROLLER, MAS SEM O MVC oficial
   Listar = () => {
     const banco = new CallNowDatabase();
     banco.Listar().then(
@@ -64,13 +64,13 @@ Atualizar = (item) => {
     )
   }
 
- 
 
- /*trocaSituacao = (item) => {
-    const banco = new CallNowDatabase();
-    banco.trocaSituacao(item)
-    this.Listar()
-  }*/
+
+  /*trocaSituacao = (item) => {
+     const banco = new CallNowDatabase();
+     banco.trocaSituacao(item)
+     this.Listar()
+   }*/
 
   Remover = (id) => {
     const banco = new CallNowDatabase();
@@ -78,58 +78,58 @@ Atualizar = (item) => {
     this.Listar()
   }
 
-isConcluid = () => {
+  isConcluid = () => {
     this.props.assumir(this.props.item)
     console.log("Botão pressionado")
-}
+  }
 
 
-render() {
+  render() {
     return (
-        <ScrollView style={{backgroundColor: 'white'}}>
+      <ScrollView style={{ backgroundColor: 'white' }}>
 
         <View style={estilo.linha1}>
-            <Text style= {estilo.titulo}>Chamados abertos </Text>
-            {
-                this.state.lista.map(
-                    item => (
-                        <Card
-                            key={item.id}
-                            item={item}
-                            id={item.id}
-                            solicitante={item.solicitante}
-                            telefone={item.telefone}
-                            categoria={item.categoria}
-                            objeto={item.objeto} /*Vai ter que mudar o nome desse state, o app vai confundir qual [e pra chamar e vai dar erro*/
-                            descricao={item.descricao}
-                            status={item.status}
-                            assumir={this.Atualizar}
-                            deletar={this.Remover} // Aqui tem que colocar a funcao Remover, era pra estar nessa tela e náo na outra
-                        />
-                    )
-                )
-            }
+          <Text style={estilo.titulo}>Chamados abertos </Text>
+          {
+            this.state.lista.map(
+              item => (
+                <Card
+                  key={item.id}
+                  item={item}
+                  id={item.id}
+                  solicitante={item.solicitante}
+                  telefone={item.telefone}
+                  categoria={item.categoria}
+                  objeto={item.objeto} /*Vai ter que mudar o nome desse state, o app vai confundir qual [e pra chamar e vai dar erro*/
+                  descricao={item.descricao}
+                  status={item.status}
+                  assumir={this.Atualizar}
+                  deletar={this.Remover} // Aqui tem que colocar a funcao Remover, era pra estar nessa tela e náo na outra
+                />
+              )
+            )
+          }
         </View>
-        </ScrollView>
+      </ScrollView>
 
     )
 
-}
+  }
 }
 
 const estilo = StyleSheet.create({
 
-    titulo: {
-        fontSize: 25,
-        margin: 5,
-        color: 'black',
-        marginTop: 20
-      },
+  titulo: {
+    fontSize: 25,
+    margin: 5,
+    color: 'black',
+    marginTop: 20
+  },
 
-      linha1: {
-        alignItems: 'center',
-        justifyContent: "center"
-      },
+  linha1: {
+    alignItems: 'center',
+    justifyContent: "center"
+  },
 
 
 

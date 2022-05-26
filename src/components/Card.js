@@ -78,7 +78,7 @@ const estilo = StyleSheet.create({
   titulo: {
     fontSize: 18,
     margin: 5,
-    color: 'black'
+    
 
   },
 
@@ -94,18 +94,22 @@ const estilo = StyleSheet.create({
   },
 
   inputbg: {
-    backgroundColor: '#cccccc',
+    backgroundColor: '#ffffff',
     width: 320,
     borderRadius: 10,
     marginBottom: 5,
     height: 170,
     marginTop: 5,
-    margin: 2
+    margin: 2,
+    borderColor: '#fa2303',
+    borderWidth: 2,
   },
 
   input: {
     margin: 5,
-    marginTop: 2
+    marginTop: 2,
+    
+
   },
 
   resultado: {

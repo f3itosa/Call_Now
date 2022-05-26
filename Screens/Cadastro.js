@@ -51,11 +51,11 @@ export default class Cadastro extends Component {
         {/* Cadastro de chamadas */}
         <View style={estilo.linha1}>
           <Text style={estilo.titulo}>Iniciar novo chamado</Text>
-          <TextInput onChangeText={(valorDigitado) => { this.setState({ solicitante: valorDigitado }) }} placeholder='  Solicitante' style={estilo.entradasDeDados} />
-          <TextInput onChangeText={(valorDigitado) => { this.setState({ telefone: valorDigitado }) }} placeholder='  Telefone' style={estilo.entradasDeDados} />
-          <TextInput onChangeText={(valorDigitado) => { this.setState({ categoria: valorDigitado }) }} placeholder='  Categoria' style={estilo.entradasDeDados} />
-          <TextInput onChangeText={(valorDigitado) => { this.setState({ item: valorDigitado }) }} placeholder='  Item' style={estilo.entradasDeDados} />
-          <TextInput onChangeText={(valorDigitado) => { this.setState({ descricao: valorDigitado }) }} placeholder='  Descrição' style={estilo.entradasDeDados} />
+          <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ solicitante: valorDigitado }) }} placeholder='  Solicitante' style={estilo.entradasDeDados} />
+          <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ telefone: valorDigitado }) }} placeholder='  Telefone' style={estilo.entradasDeDados} />
+          <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ categoria: valorDigitado }) }} placeholder='  Categoria' style={estilo.entradasDeDados} />
+          <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ item: valorDigitado }) }} placeholder='  Item' style={estilo.entradasDeDados} />
+          <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ descricao: valorDigitado }) }} placeholder='  Descrição' style={estilo.entradasDeDados} />
           <View style={estilo.areaBotao}>
             <TouchableOpacity style={estilo.botao} onPress={() => this.Cadastrar(this.state.solicitante, this.state.telefone, this.state.categoria, this.state.item, this.state.descricao, this.state.status)}>
               <Text style={{ color: 'white', fontWeight: 'bold' }}>Submeter</Text>
@@ -82,7 +82,10 @@ const
     borderWidth: 2,
     margin: 15,
     height: 40, width: 300,
-    textAlign: 'left'
+    textAlign: 'left',
+    placeholderTextColor: 'black',
+
+    
   },
   entradasDeDadosDescricao: {
     borderRadius: 5,
@@ -91,6 +94,8 @@ const
     margin: 15,
     height: 100, width: 300,
     textAlign: 'left'
+    
+  
   },
   titulo: {
     fontSize: 25,
@@ -120,5 +125,7 @@ const
   },
   bgcolor: {
     backgroundColor: 'white'
-  }
+  },
+
+ 
 })
