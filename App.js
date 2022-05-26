@@ -43,7 +43,7 @@ export default class App extends Component {
 
       return <Icon name={iconName} size={size} color={color} />
     }
-     // tabBarActiveTintColor: '#fa2303' //
+     // tabBarActiveTintColor: '#fa2303' ////
 
   }
 })
