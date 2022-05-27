@@ -10,12 +10,20 @@ import EIcon from 'react-native-vector-icons/Ionicons';
 import BIcon from 'react-native-vector-icons/Foundation';
 import Icon from 'react-native-vector-icons/Feather';
 
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+import Lista from './Screens/Lista';
+
 import Logo from './Icons/Logo';
 
 import { View } from 'react-native';
+import Cadastro from './Screens/Cadastro';
 
 
 const notificador = Notification;
+
+const Stack = createStackNavigator();
 
 
 export default class App extends Component {
@@ -31,17 +39,17 @@ export default class App extends Component {
 
 
   //criar notificacao
-  mandarNotificacao = () => {
+  /*mandarNotificacao = () => {
     notificador.showNotification(
       1,
-      "Food Voucher",
-      "🍔 Que tal um lanchinho?",
+      "#",
+      "#",
       {}, // data
       {} // options
     )
 
    
-  }
+  }*/
 
 
 
@@ -62,6 +70,7 @@ export default class App extends Component {
         <NavigationContainer>
           <TabNavigator />
         </NavigationContainer>
+        
       </>
     )
   }

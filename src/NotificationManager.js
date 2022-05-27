@@ -5,7 +5,7 @@ import PushNotification from "react-native-push-notification"
 
 class NotificationManager {
 
-    setNavegador(novoNavegador){
+   /* setNavegador(novoNavegador){
         navegador = novoNavegador
     }
 
@@ -23,7 +23,7 @@ class NotificationManager {
 
             },
         })
-    }
+    }*/
 
     // É aqui que nossa notificação para o Android é construida
     buildAndroidNotification = (id, title, message, data = {}, options = {}) => {
@@ -81,26 +81,26 @@ class NotificationManager {
     }
 
     agendarNotificacoes = () => {
-        PushNotification.localNotificationSchedule({
+          PushNotification.localNotificationSchedule({
             //... You can use all the options from localNotifications
             id:2,
-            title:"Tô só te esperando... ",
+            title:"Abra novos chamados 🗓",
             channelId: "channel-id",
-            message: "70% OFF tá bom pra você ?", // (required)
-            date: new Date(Date.now() + 5 * 1000), // in 60 secs
+            message: "Agendar preventiva 🔍", // (required)
+            date: new Date(Date.now() + 15 * 1000), // in 60 secs
             allowWhileIdle: false, // (optional) set notification to work while on doze, default: false
           
             /* Android Only Properties */
-            repeatTime: 30 * 1000, // (optional) Increment of configured repeatType. Check 'Repeating Notifications' section for more info.
+            repeatTime: 20 * 1000, // (optional) Increment of configured repeatType. Check 'Repeating Notifications' section for more info.
             repeatType: "time"
           });
           PushNotification.localNotificationSchedule({
             //... You can use all the options from localNotifications
             id:3,
-            title:"Cheiro de oferta no ar",
+            title:"Chamados em aberto ⚠",
             channelId: "channel-id",
-            message: "👉 Mais economia por menos de R$2", // (required)
-            date: new Date(Date.now() + 15 * 1000), // in 60 secs
+            message: "Usuário aguardando atendimento técnico...", // (required)
+            date: new Date(Date.now() + 25 * 1000), // in 60 secs
             allowWhileIdle: false, // (optional) set notification to work while on doze, default: false
           
             /* Android Only Properties */
