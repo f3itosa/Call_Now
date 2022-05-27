@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1001588001171",
+    "project_id": "callnow-fe02b",
+    "storage_bucket": "callnow-fe02b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001588001171:android:3afc371582376271bb4066",
+        "android_client_info": {
+          "package_name": "com.call_now"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001588001171-v4ikejg0g0tu29mq3ccjelm99o58k1hs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoQdTkCk0Rkw77ooPqYF94bYSXkv74IMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001588001171-v4ikejg0g0tu29mq3ccjelm99o58k1hs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

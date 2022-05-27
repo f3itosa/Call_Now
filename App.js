@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TabNavigator from './Navigators/TabNavigator';
+import { Notification } from './src/NotificationManager'
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +15,45 @@ import Logo from './Icons/Logo';
 import { View } from 'react-native';
 
 
+const notificador = Notification;
+
+
 export default class App extends Component {
+
+
+
+  componentDidMount() {
+    //notificador.configure();
+    notificador.createChannel();
+    notificador.agendarNotificacoes();
+
+  }
+
+
+  //criar notificacao
+  mandarNotificacao = () => {
+    notificador.showNotification(
+      1,
+      "Food Voucher",
+      "🍔 Que tal um lanchinho?",
+      {}, // data
+      {} // options
+    )
+
+   
+  }
+
+
+
+  cancelar = () => {
+    notificador.cancelAllLocalNotification()
+  }
+
+
+
+
+
+
   render() {
     return (
 
