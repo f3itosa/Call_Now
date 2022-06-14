@@ -52,7 +52,7 @@ export default class Cadastro extends Component {
         {/* Cadastro de chamadas */}
         <View style={estilo.linha1}>
           <Text style={estilo.titulo}>Iniciar novo chamado</Text>
-          <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ solicitante: valorDigitado }) }} placeholder='  Solicitante' style={estilo.entradasDeDados} />
+          <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ solicitante: valorDigitado }) }} placeholder='  Solicitante' style={estilo.entradasDeDados} />  
           <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ telefone: valorDigitado }) }} placeholder='  Telefone' style={estilo.entradasDeDados} />
           <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ categoria: valorDigitado }) }} placeholder='  Categoria' style={estilo.entradasDeDados} />
           <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ item: valorDigitado }) }} placeholder='  Item' style={estilo.entradasDeDados} />
@@ -61,7 +61,7 @@ export default class Cadastro extends Component {
           <View style={estilo.areaBotao}>
            
 
-            <Button  style={estilo.botao}  mode="contained"onPress={() => this.Cadastrar(this.state.solicitante, this.state.telefone, this.state.categoria, this.state.item, this.state.descricao, this.state.status)}>
+            <Button  style={estilo.botao}  mode="contained" onPress={() => this.Cadastrar(this.state.solicitante, this.state.telefone, this.state.categoria, this.state.item, this.state.descricao, this.state.status)}>
               Submeter
             </Button>
 
