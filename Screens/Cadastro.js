@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text, Button, ScrollView, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import { View,  ScrollView,  Text,  StyleSheet,TextInput, TouchableOpacity } from 'react-native'
+import {Button, } from 'react-native-paper'
 
 import CallNowDatabase from '../src/Database/CallNowDatabase'
 import CallNow from '../src/Models/CallNow'
@@ -56,10 +57,15 @@ export default class Cadastro extends Component {
           <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ categoria: valorDigitado }) }} placeholder='  Categoria' style={estilo.entradasDeDados} />
           <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ item: valorDigitado }) }} placeholder='  Item' style={estilo.entradasDeDados} />
           <TextInput placeholderTextColor={'#686868'} onChangeText={(valorDigitado) => { this.setState({ descricao: valorDigitado }) }} placeholder='  Descrição' style={estilo.entradasDeDados} />
+
           <View style={estilo.areaBotao}>
-            <TouchableOpacity style={estilo.botao} onPress={() => this.Cadastrar(this.state.solicitante, this.state.telefone, this.state.categoria, this.state.item, this.state.descricao, this.state.status)}>
-              <Text style={{ color: 'white', fontWeight: 'bold' }}>Submeter</Text>
-            </TouchableOpacity>
+           
+
+            <Button  style={estilo.botao}  mode="contained"onPress={() => this.Cadastrar(this.state.solicitante, this.state.telefone, this.state.categoria, this.state.item, this.state.descricao, this.state.status)}>
+              Submeter
+            </Button>
+
+
           </View>
         </View>
 
@@ -105,14 +111,9 @@ const
   },
   botao: {
     width: 150,
+    height:40,
     backgroundColor: '#fa2303',
-    alignItems: 'center',
-    justifyContent: "center",
-    borderRadius: 10,
-    padding: 10,
-    elevation: 5,
-    margin: 5,
-    color: 'white'
+
   },
   areaBotao: {
     flexDirection: 'row',

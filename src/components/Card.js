@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react'
-import { View, Text, Button, ScrollView, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import {Button, } from 'react-native-paper'
+
 
 import CallNowDatabase from '../Database/CallNowDatabase'
 
@@ -46,13 +48,18 @@ export default class Card extends Component {
 
 
         <View style={estilo.areaBotao}>
-          <TouchableOpacity style={estilo.botao} onPress={() => this.props.assumir(this.props.item)}>
-            <Text style={{ color: 'white' }}>Resolver</Text>
-          </TouchableOpacity>
+        
 
-          <TouchableOpacity style={estilo.botao} onPress={() => this.props.deletar(this.props.id)}>
-            <Text style={{ color: 'white' }}>Apagar</Text>
-          </TouchableOpacity>
+          <Button mode="contained"  style={estilo.botao} onPress={() => this.props.assumir(this.props.item)} >
+            Resolver 
+          </Button>
+
+
+
+          <Button mode="contained"  style={estilo.botao} onPress={() => this.props.deletar(this.props.id)} >
+            Apagar 
+          </Button>
+
 
 
         </View>
@@ -66,10 +73,10 @@ const estilo = StyleSheet.create({
 
   botao: {
     width: 140,
-    height: 40,
+    height: 45,
     backgroundColor: '#fa2303',
-    alignItems: 'center',
-    justifyContent: "center",
+    //alignItems: 'center',
+    //justifyContent: "center",
     borderRadius: 10,
     padding: 5,
     margin: 5,
